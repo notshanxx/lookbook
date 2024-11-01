@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LookBook</title>
+
     <script src="https://unpkg.com/quagga@0.12.1/dist/quagga.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.1/dist/tesseract.min.js"></script> -->
+    <link rel="stylesheet" href="./styles/main.css" />
   </head>
   <body>
     <header>
@@ -14,24 +15,24 @@
     </header>
 
     <div>
-      <input type="text" name="isbn" id="input" required />
+      <input type="text" name="isbn" id="input" required placeholder="ISBN"/>
       <button id="search-btn">Look</button>
       <button id="scanner">Scan ISBN</button>
       <p>Result: <span id="result-span"></span></p>
     </div>
-<div id="matched-book" style="background-color: red;" ></div>
-    <main>
+    <div id="matched-book" style="background-color: rgba(255, 0, 0, 0.144)"></div>
+    <main></main>
+    <div class="scanner-container">
       
+      <div id="barcode-scanner"><button id="stop-scanner-btn">Stop</button></div>
       
+    </div>
 
-
-    </main>
-
-    <div id="barcode-scanner" hidden="hidden"></div>
-
-    <script src="barcode-scanning.js"></script>
-    <script src="display-book.js"></script>
-    <script src="validate-isbn.js"></script>
-    <script src="index.js"></script>
+    <script type="module" src="scripts/display-book.js"></script>
+    <script type="module" src="scripts/validate-isbn.js"></script>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="scripts/barcode-scanning.js"></script>
+    <script type="module" src="scripts/showScanner.js"></script>
+    <script type="module" src="scripts/searchedBookIndiv.js"></script>
   </body>
 </html>

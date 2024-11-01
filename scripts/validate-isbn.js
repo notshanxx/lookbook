@@ -1,10 +1,14 @@
+// import
+import displayBook from "./display-book.js";
 
+//variables
 const input = document.querySelector("#input");
 const button = document.getElementById("search-btn");
 const resultSpan = document.getElementById("result-span");
 const matchedEl = document.getElementById("matched-book");
+const mainEl = document.querySelector("main");
 const apiKey = "AIzaSyB_GlUk4NE5CrL_b7mwEHYOZqo_Ed9jyzM";
-let isbn = "";
+export let isbn = "";
 
 let url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}&key=${apiKey}`;
 
@@ -92,15 +96,19 @@ function caculateISBN13(isbn) {
   return sum;
 }
 
-const mainEl = document.querySelector("main");
+
 
 async function fetchBook(url) {
   console.log("fetching");
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      displayBook(data.items);
-
+      if (!data.items) {
+        mainEl.innerHTML = "no books found";
+        return console.error("no data");
+        
+      }
+    displayBook(data.items);
       console.log(data);
       console.log(data.items[0]);
 
