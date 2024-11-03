@@ -34,5 +34,8 @@ export default function initializeBarcodeScanner() {
     // document.querySelector("#barcode-scanner").style.display = "none";
     showScanner(false);
     Quagga.stop();
+    const button = document.getElementById("search-btn");
+    button.click();
+
   });
 }
