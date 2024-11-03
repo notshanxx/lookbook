@@ -6,7 +6,7 @@ const input = document.querySelector("#input");
 const button = document.getElementById("search-btn");
 const resultSpan = document.getElementById("result-span");
 const matchedEl = document.getElementById("matched-book");
-const mainEl = document.querySelector("main");
+const relatedEl = document.querySelector("#related-book");
 const apiKey = "AIzaSyB_GlUk4NE5CrL_b7mwEHYOZqo_Ed9jyzM";
 export let isbn = "";
 
@@ -104,7 +104,7 @@ async function fetchBook(url) {
     .then((response) => response.json())
     .then((data) => {
       if (!data.items) {
-        mainEl.innerHTML = "no books found";
+        relatedEl.innerHTML = "no books found";
         return console.error("no data");
         
       }

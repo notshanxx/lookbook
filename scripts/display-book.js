@@ -5,9 +5,9 @@ import { isbn } from "./validate-isbn.js";
 
 //export that display search result per book
 export default function displayBook(response) {
-  const mainEl = document.querySelector("main");
+  const relatedEl = document.querySelector("#related-book");
   const matchedEl = document.getElementById("matched-book");
-  mainEl.innerHTML = "";
+  relatedEl.innerHTML = "";
   matchedEl.innerHTML = "";
   response.forEach((book) => {
     // let formatData = {

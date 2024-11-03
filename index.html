@@ -15,17 +15,45 @@
     </header>
 
     <div>
-      <input type="text" name="isbn" id="input" required placeholder="ISBN"/>
+      <input type="text" name="isbn" id="input" required placeholder="ISBN" />
       <button id="search-btn">Look</button>
       <button id="scanner">Scan ISBN</button>
       <p>Result: <span id="result-span"></span></p>
     </div>
-    <div id="matched-book" style="background-color: rgba(255, 0, 0, 0.144)"></div>
-    <main></main>
+    <main>
+      <div class="search-result">
+        <div
+          id="matched-book"
+          style="background-color: rgba(255, 0, 0, 0.144)"
+        ></div>
+        <div id="related-book"></div>
+      </div>
+      <div class="book-info">
+        <h1>One Piece, Vol. 1 (2003-09-02)</h1>
+
+        <div class="card-bg">
+          <img
+            src="https://via.placeholder.com/128x192?text=No+Image+Available"
+          />
+          <i>Eiichiro oda</i>
+          <button>Add Favorite</button>
+          <button>More Info</button>
+
+          <span>a long category</span>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quae
+            cupiditate quod perspiciatis veritatis temporibus quaerat autem
+            alias vitae eligendi, recusandae nemo ullam velit pariatur ratione
+            eos accusantium adipisci animi?
+          </p>
+        </div>
+      </div>
+    </main>
+
     <div class="scanner-container">
-      
-      <div id="barcode-scanner"><button id="stop-scanner-btn">Stop</button></div>
-      
+      <div id="barcode-scanner">
+        <button id="stop-scanner-btn">Stop</button>
+      </div>
     </div>
 
     <script type="module" src="scripts/display-book.js"></script>

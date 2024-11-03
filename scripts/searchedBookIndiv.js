@@ -27,7 +27,7 @@ export function searchedBookIndiv(book, matched) {
       : "https://via.placeholder.com/128x192?text=No+Image+Available",
   };
 
-  const mainEl = document.querySelector("main");
+  const relatedEl = document.querySelector("#related-book");
   const matchedEl = document.getElementById("matched-book");
   const identifiers = book.volumeInfo.industryIdentifiers || [];
 
@@ -51,7 +51,7 @@ export function searchedBookIndiv(book, matched) {
 
       </div>`;
   } else {
-    mainEl.innerHTML += `
+    relatedEl.innerHTML += `
       <div class="book">
       <h3>${book.volumeInfo.title} (${book.volumeInfo.publishedDate})</h3> 
       <i>${formatData.authors}</i> 
