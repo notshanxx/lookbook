@@ -1,3 +1,7 @@
+body{
+    margin: 0;
+}
+
 main {
     display: flex;
     flex-direction: row;
@@ -7,9 +11,9 @@ main {
 
 .search-result, .book-info {
     min-width: 50%;
+    margin: 1rem;
 }
 .book-info{
-    
     background: violet;
     position: sticky;
     top: 0; 
@@ -17,6 +21,15 @@ main {
     height: 100vh;
 
 }
+.book{
+    padding: 2rem;
+    margin: .5rem;
+    background-color: rgba(65, 43, 43, 0.425);
+}
+#matched-book{
+    background-color: rgba(32, 32, 32, 0.473);
+}
+
 
 .scanner-container{
     display: none;
@@ -35,16 +48,18 @@ main {
 #stop-scanner-btn{
     display: none;
     position: absolute;
-    top: 20%;
-    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
     background-color: rgb(102, 0, 0);
     border: none;
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     color: wheat;
+    z-index: 1;
 }
 
 video{
-    width: 50vw;
+    width: 80vw;
     height: 50vh;
 }
 
