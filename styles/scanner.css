@@ -1,0 +1,33 @@
+
+.scanner-container{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#barcode-scanner{
+    position: relative;
+    top: 10%;
+    left: 10%;
+}
+#stop-scanner-btn{
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    background-color: rgb(102, 0, 0);
+    border: none;
+    padding: 1rem 2rem;
+    color: wheat;
+    z-index: 1;
+}
+
+video{
+    /* z-index: 3; */
+    width: 80vw;
+    height: 50vh;
+}

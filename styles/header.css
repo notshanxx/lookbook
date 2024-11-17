@@ -1,0 +1,87 @@
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 20vh;
+    /* animation: up 2s ease-in-out infinite; */
+}
+.search-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+    background-color: var(--primary);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.search-header h1{
+    color: var(--background);
+}
+.isbn-formula {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+summary::marker{
+    color: var(--background);
+
+}
+
+details[open]{
+    background-color: rgba(255, 255, 255, 0.301);
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+
+.isbn-dropdown{
+    font-style: italic;
+    font-size: .8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+
+@media (min-width: 1024px) {
+    header{
+        margin: 0 20%;
+    }
+}
+
+@keyframes drop {
+    0% {
+      transform-origin: top;
+      transform: scaleY(0);
+    }
+    100% {
+      transform-origin: top;
+      transform: scaleY(1);
+    }
+}
+
+@keyframes up {
+    0% {
+      transform-origin: top;
+      transform: scaleY(0);
+    }
+    25% {
+      transform-origin: top;
+      transform: scaleY(1);
+    }
+    75% {
+      transform-origin: bottom;
+      transform: scaleY(1);
+    }
+    100% {
+      transform-origin: bottom;
+      transform: scaleY(0);
+    }
+}

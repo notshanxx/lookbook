@@ -1,0 +1,15 @@
+.searchbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.searchbar input{
+    border: none;
+    width: 90%;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+#scanner{
+    border-radius: 0 .5rem .5rem 0;
+
+}

@@ -1,24 +1,44 @@
-.book-info {
-  background: rgb(80, 43, 80);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100vh;
-  font: 400 0.8rem "sans-serif";
-}
 
+.book-info {
+  display: none;
+  background: rgb(80, 43, 80);
+  position: fixed;
+  top: 0;
+  left: 0; 
+  width: auto;
+  height: 100vh;
+  font: 400 0.8rem "sans-serif";
+  padding-top: 2rem;
+}
+.book-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;/*  control card size */
+}
+.book-title {
+  color: #fff;
+  /* min-width: 80%; */
+  /* margin: 2rem; */
+
+}
 .card-bg {
-    position: relative;
-  background: rgb(201, 173, 201);
-  padding: 3rem;
-  margin: 3rem;
-  margin-top: 10rem;
+  position: relative;
+  width: auto;
+  background: var(--accent);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  /* margin: 2rem; */
+  margin-top: 7rem;
   margin-bottom: 1rem;
   border-radius: 20px;
 }
 
-.card-bg img {
+
+.book-thumbnail {
   position: absolute;
   top: -5rem;
   left: 50%;
@@ -27,7 +47,7 @@
 }
 
 .author {
-  margin-top: 80%;
+  margin-top: 77%;
   text-align: center;
 }
 
@@ -36,15 +56,34 @@
   justify-content: space-evenly;
 }
 .button-container button {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 100px;
+}
+
+.add-favorite,
+.more-info {
+  padding: .5rem 1rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+button span{
+ 
+  font: 400 .5rem "Roboto";
+}
+
+.svg {
+  width: 20%;
+  
 }
 
 .category {
   background: #742323;
-  font: 400 0.8rem "Roboto";
-  margin: 2rem 1rem;
+  font: 400 60% "Roboto";
+  margin: 1rem;
   padding: 0.5rem;
   border-radius: 10px;
   color: #fff;
@@ -52,14 +91,15 @@
 }
 
 .description {
-    max-height: 100px;
-    overflow: auto;
+  max-height: 100px;
   
+  overflow: auto;
+
 }
 
 .additional-info {
-    color: #fff;
-    font-family: 'Courier New', Courier, monospace;
-    display: flex;
-    justify-content: center;
+  color: #fff;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  justify-content: center;
 }

@@ -1,0 +1,36 @@
+.announcer{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5rem;
+    align-items: center;
+    z-index: 1000;
+}
+
+.announcer p{
+    background-color: aliceblue;
+    padding: .5rem;
+    animation: fadeInUp 5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        height: 0;
+    }
+    50% {
+        opacity: 1;
+        height: auto;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(0);
+        height: 0;
+    }
+}
+

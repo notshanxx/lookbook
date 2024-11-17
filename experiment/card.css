@@ -1,0 +1,155 @@
+.book-info{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow: auto;
+    z-index: 3;
+
+}
+
+.book-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: rgba(214, 214, 214, 0.788);
+    backdrop-filter: blur(3px);
+    min-height: 100vh;
+    max-width: 100%;
+    
+    z-index: 9;
+    
+}
+.back-btn{
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    /* background-color: rgb(102, 0, 0); */
+    border: none;
+    background: none;
+    /* padding: 1rem 2rem; */
+    /* color: wheat; */
+    
+    
+}
+
+.title-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem ;
+}
+.title-container .book-title{
+    margin: 0;
+    font-size: 2rem;
+    
+}
+
+.title-container .publish-year{
+    font-style: italic;
+}
+
+.card-bg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background: #5a5a5a; */
+
+}
+.card-bg button{
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 20px;
+}
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: .5rem;
+    margin: 1rem 0;
+}
+button span{
+ 
+    font: 400 .8rem "Roboto";
+  }
+  
+  .svg {
+    width: 20%;
+    
+  }
+
+.more-info, .add-favorite, .remove-favorite{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* gap: .5rem; */
+    align-items: center;
+}
+.more-info{
+    background-color: var(--background);
+}
+.add-favorite{
+    background-color: var(--primary);
+    color: white;
+}
+.remove-favorite{
+    background-color: rgb(255, 80, 80);
+}
+
+.category {
+    font: 200 italic .8rem sans-serif;
+    margin-top: 0;
+}
+.description {
+    max-height: 100px;
+    font-size: small;
+    width: 50%;
+    overflow: auto;
+    margin: 1rem 0;
+}  
+
+@media (min-width: 1024px) {
+    .book-info{
+        display: none;
+        position: sticky;
+        top: 0;
+        right: 0;
+        min-width: 30%;
+        align-self: flex-start; 
+        font-size: .8rem;
+        margin: 0 2rem;
+        border-radius: 1rem;
+    }
+    .search-result{
+        min-width: 50%;
+    }
+    
+    .book-content{
+        position: initial;
+        
+    }
+  .book-content {
+    column-gap: 2rem;
+  }
+
+  .title-container .book-title{
+    margin: 0;
+    font-size: 2rem;
+}
+.description {
+    max-height: 100px;
+    font-size: small;
+    width: 50%;
+    overflow: auto;
+    margin: 1rem 0;
+}  
+
+
+}
+

@@ -1,0 +1,38 @@
+button {
+  background-color: var(--background);
+}
+.svg-button {
+  position: relative;
+  padding: 1rem;
+}
+.feather {
+  width: 1rem;
+  height: 1rem;
+  stroke: var(--text);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.feather-book {
+}
+.feather-heart {
+  fill: var(--background);
+  stroke: none;
+}
+.feather-more-vertical {
+}
+.feather-search {
+}
+.feather-home {
+}
+.feather-x {
+  width: 2rem;
+  height: 2rem;
+}
+.feather-camera {
+}

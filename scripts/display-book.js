@@ -1,14 +1,17 @@
 // imports
 import { searchedBookIndiv} from "./searchedBookIndiv.js";
 import { isbn } from "./validate-isbn.js";
+import Loading from "./component/Loading.js";
 
 
 //export that display search result per book
 export default function displayBook(response) {
   const relatedEl = document.querySelector("#related-book");
   const matchedEl = document.getElementById("matched-book");
-  relatedEl.innerHTML = "";
-  matchedEl.innerHTML = "";
+  relatedEl.innerHTML = ``;
+  matchedEl.innerHTML = ``;
+
+  
   response.forEach((book) => {
     // let formatData = {
     //   title: book.volumeInfo.title,
@@ -46,6 +49,7 @@ export default function displayBook(response) {
       console.log("found");
       // display searched book
       searchedBookIndiv(book, true);
+
     } else {
       console.log(book.volumeInfo.title);
       console.log(matchedEl);
@@ -53,4 +57,22 @@ export default function displayBook(response) {
       searchedBookIndiv(book, false);
     }
   });
+  if (!matchedEl.innerText) {
+    if (window.innerWidth > 768) {
+      matchedEl.innerHTML = '<div></div><div></div><div style="display: flex; justify-content: center; align-items: center; height: 100%;">No matches found</div>';
+    } else {
+      matchedEl.innerHTML = '<div></div><div style="display: flex; justify-content: center; align-items: center; height: 100%;">No matches found</div>';
+    }
+
+  }
+
+  if (!relatedEl.innerText) {
+    if (window.innerWidth > 768) {
+      relatedEl.innerHTML = '<div></div><div></div><div style="display: flex; justify-content: center; align-items: center; height: 100%;">No related books found</div>';
+    } else {
+      relatedEl.innerHTML = '<div></div><div style="display: flex; justify-content: center; align-items: center; height: 100%;">No related books for now :D</div>';
+    }
+
+  }
+
 }

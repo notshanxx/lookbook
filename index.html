@@ -1,66 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LookBook</title>
 
     <script src="https://unpkg.com/quagga@0.12.1/dist/quagga.min.js"></script>
+    <link rel="stylesheet" href="./styles/scanner.css" />
     <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./experiment/card.css" />
+    <link rel="stylesheet" href="./styles/favorites.css" />
+    <link rel="stylesheet" href="./svg/svg.css" />
+    <link rel="stylesheet" href="./styles/searchbar.css" />
+    <link rel="stylesheet" href="./styles/announcer.css" />
+    <link rel="stylesheet" href="./styles/loading.css" />
   </head>
+
   <body>
-    <header>
-      <h1>LookBook</h1>
-      <nav><button>Home</button><button>Favorite</button></nav>
-    </header>
+    <html>
+      <body>
+        <script src="https://accounts.google.com/gsi/client" async></script>
+        <script src="scripts/google-sign-in/handleResponse.js"></script>
+        <script src="scripts/google-sign-in/initialize-oauth.js"></script>
 
-    <div>
-      <input type="text" name="isbn" id="input" required placeholder="ISBN" />
-      <button id="search-btn">Look</button>
-      <button id="scanner">Scan ISBN</button>
-      <p>Result: <span id="result-span"></span></p>
-    </div>
-    <main>
-      <div class="search-result">
-        <div
-          id="matched-book"
+        <div id="announcer" class="announcer"></div>
+
+        <header>
+          <div class="search-header">
+            <h1>LookBook</h1>
+            <nav>
+              <button id="home" class="svg-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-home"
+                >
+                  <path
+                    d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                  ></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg></button
+              ><button id="favorite" class="svg-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-book"
+                >
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path
+                    d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                  ></path>
+                </svg>
+              </button>
+            </nav>
+            <div id="google-sign-in-button" style="display: none">
+              <button>Connect Google Account</button>
+            </div>
+
+            <div id="search-form" class="searchbar">
+              <input
+                type="text"
+                name="isbn"
+                id="input"
+                required
+                placeholder="ISBN"
+              />
+              <button id="search-btn" class="svg-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-search"
+                >
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </button>
+              <button id="scanner" class="svg-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-camera"
+                >
+                  <path
+                    d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+                  ></path>
+                  <circle cx="12" cy="13" r="4"></circle>
+                </svg>
+              </button>
+              
+            </div>
+            <details class="isbn-formula" id="isbn-info-div">
+              <summary>ISBN check</summary>
+              <div class="isbn-dropdown">
+                <a href="#">want to learn how to check ISBN?</a>
+                <p id="result-span"></p>
+                <p id="isbn-type">
+                  Do you know? <br />
+                  netoyka?.
+                </p>
+                <p id="isbn-formula">
+                  ISBN Formula:
+                  <br />
+                  10: 1x + 2x + 3x + 4x + 5x + 6x + 7x + 8x + 9x + 10x = 0 (mod
+                  11)
+                  <br />
+                  13: x + 3x + x + 3x + x + 3x + x + 3x + x + 3x + x + 3x + x = 0
+                  (mod 10)
+                </p>
+              </div>
+            </details>
+          </div>
           
-        ></div>
-        <div id="related-book"></div>
-      </div>
-      <!-- <div class="book-info">
-        <h1>One Piece, Vol. 1 (2003-09-02)</h1>
+        </header>
+         
 
-        <div class="card-bg">
-          <img
-            src="https://via.placeholder.com/128x192?text=No+Image+Available"
-          />
-          <i>Eiichiro oda</i>
-          <button>Add Favorite</button>
-          <button>More Info</button>
 
-          <span>a long category</span>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quae
-            cupiditate quod perspiciatis veritatis temporibus quaerat autem
-            alias vitae eligendi, recusandae nemo ullam velit pariatur ratione
-            eos accusantium adipisci animi?
+        <main>
+          <div id="loader" class="loader" style="display: none;"></div>
+          
+          <div class="search-result" id="search-result" style="display: none">
+            <h2>MATCHED ISBN</h2>
+            <div id="matched-book"></div>
+            <h2>RELATED ISBN</h2>
+            <div id="related-book"></div>
+          </div>
+          <div class="book-info" id="book-info">
+            <!-- <div class="book-content">
+          <h1 class="book-title">One Piece, Vol. 1 (2003-09-02)</h1>
+          <div class="card-bg">
+            <img
+              class="book-thumbnail"
+              width="128px"
+              src="https://books.google.com/books/content?id=sZ9ROjUamcsC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+            />
+            <p class="author">Eiichiro oda</p>
+            <div class="button-container">
+              <button class="add-favorite">
+                <img class="svg" src="/svg/heart.svg" alt="" />
+                <span class="text">Add Favorite</span>
+              </button>
+              <button class="more-info">
+                <img class="svg" src="/svg/more-vertical.svg" alt="" />
+                <span class="text">More Info</span>
+              </button>
+            </div>
+  
+            <p class="category">Categoryhgn';fn hfolbk</p>
+            <p class="description" scroll>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt
+              quae cupiditate quod perspiciatis veritatis temporibus quaerat
+              autem alias vitae eligendi, recusandae nemo ullam velit pariatur
+              ratione eos accusantium adipisci animi?
+            </p>
+          </div>
+          <p class="additional-info">
+            ISBN 10: 1234567890 <br />
+            ISBN 13: 1234567890123 <br />
+            Publisher: hello INc. <br />
+            Book : 176 pages <br />
+            Dimension: 26.00 cm x 26.00 cm x 26.00 cm
           </p>
+        </div> -->
+          </div>
+        </main>
+
+        <div class="scanner-container">
+          <div id="barcode-scanner">
+            <button id="stop-scanner-btn">Stop</button>
+          </div>
         </div>
-      </div> -->
-    </main>
 
-    <div class="scanner-container">
-      <div id="barcode-scanner">
-        <button id="stop-scanner-btn">Stop</button>
-      </div>
-    </div>
+        <script type="module" src="scripts/display-book.js"></script>
+        <script type="module" src="scripts/validate-isbn.js"></script>
+        <script type="module" src="index.js"></script>
 
-    <script type="module" src="scripts/display-book.js"></script>
-    <script type="module" src="scripts/validate-isbn.js"></script>
-    <script type="module" src="index.js"></script>
-    <script type="module" src="scripts/barcode-scanning.js"></script>
-    <script type="module" src="scripts/showScanner.js"></script>
-    <script type="module" src="scripts/searchedBookIndiv.js"></script>
+        <script type="module" src="scripts/display-book-info.js"></script>
+        <script type="module" src="scripts/searchedBookIndiv.js"></script>
+        <script type="module" src="scripts/showSearch.js"></script>
+
+        <!-- BARCODE -->
+        <script
+          type="module"
+          src="scripts/barcode/barcode-scanning.js"
+        ></script>
+        <script type="module" src="scripts/barcode/showScanner.js"></script>
+        <!-- FAVORITE -->
+        <script type="module" src="scripts/favorite/addToFavorite.js"></script>
+        <script
+          type="module"
+          src="scripts/favorite/removeToFavorite.js"
+        ></script>
+        <script type="module" src="scripts/favorite/showFavorite.js"></script>
+        <!-- COMPONENT -->
+        <script type="module" src="scripts/component/Book.js"></script>
+        <script type="module" src="scripts/component/Announce.js"></script>
+        <script type="module" src="scripts/component/Loading.js"></script>
+        <!-- SWITCH CONTENT -->
+        <script type="module" src="scripts/switch-content/ToHome.js"></script>
+        <script
+          type="module"
+          src="scripts/switch-content/ToFavorites.js"
+        ></script>
+      </body>
+    </html>
   </body>
 </html>
