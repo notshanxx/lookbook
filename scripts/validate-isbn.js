@@ -9,7 +9,7 @@ const button = document.getElementById("search-btn");
 const resultSpan = document.getElementById("result-span");
 const matchedEl = document.getElementById("matched-book");
 const relatedEl = document.querySelector("#related-book");
-const apiKey = "AIzaSyB_GlUk4NE5CrL_b7mwEHYOZqo_Ed9jyzM";
+// const apiKey = "AIzaSyB_GlUk4NE5CrL_b7mwEHYOZqo_Ed9jyzM";
 export let isbn = "";
 
 let url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`;
@@ -40,7 +40,7 @@ button.addEventListener("click", () => {
   }</mark>`;
   // if isbn is valid change url else show detail
   checkISBN(inputISBN)
-    ? (url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${inputISBN}&key=${apiKey}`)
+    ? (url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${inputISBN}`)
     : openDetailEl();
     //fetching if theres this isbn in databse
   checkISBN(inputISBN) ? fetchBook(url) : "";
