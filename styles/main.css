@@ -34,7 +34,7 @@ nav{
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    z-index: 100;
+    z-index: 1;
 }
 button {
   background-color: var(--accent);
