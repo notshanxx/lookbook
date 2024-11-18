@@ -4,6 +4,8 @@ header{
     justify-content: space-around;
     min-height: 20vh;
     /* animation: up 2s ease-in-out infinite; */
+    
+
 }
 .search-header{
     display: flex;
@@ -12,12 +14,13 @@ header{
     align-items: center;
     gap: 1rem;
     margin: 1rem;
-    background-color: var(--primary);
+    background-color: var(--text);
     padding: 2rem;
     border-radius: 1rem;
+    color: var(--background);
 }
 .search-header h1{
-    color: var(--background);
+  color: var(--background);
 }
 .isbn-formula {
     display: flex;
@@ -27,7 +30,7 @@ header{
     gap: 1rem;
 }
 summary::marker{
-    color: var(--background);
+    color: var(--accent);
 
 }
 
@@ -53,6 +56,7 @@ details[open]{
 @media (min-width: 1024px) {
     header{
         margin: 0 20%;
+        
     }
 }
 
