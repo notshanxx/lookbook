@@ -13,7 +13,7 @@
 .announcer p{
     background-color: aliceblue;
     padding: .5rem;
-    animation: fadeInUp 5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    animation: fadeInUp 5s cubic-bezier(0, 1, 0.58, 1) forwards;
 }
 
 
@@ -21,16 +21,16 @@
     from {
         opacity: 0;
         transform: translateY(20px);
-        height: 0;
+        /* height: 0; */
     }
     50% {
         opacity: 1;
-        height: auto;
+        /* height: auto; */
     }
     to {
         opacity: 0;
         transform: translateY(0);
-        height: 0;
+        /* height: 0; */
     }
 }
 

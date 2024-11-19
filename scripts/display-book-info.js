@@ -91,7 +91,7 @@ export default function displayBookInfo(passedData) {
 
   moreInfoButton.classList.add("more-info");
   moreInfoButton.innerHTML = '<div class="svg-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></div><span class="text">More Info</span>';
-  moreInfoButton.onclick = () => alert("More Info");
+  moreInfoButton.onclick = () => window.open(data.volumeInfo.previewLink, "_blank");
   buttonContainer.appendChild(favoriteButton);
   buttonContainer.appendChild(moreInfoButton);
 
@@ -120,7 +120,8 @@ export default function displayBookInfo(passedData) {
           : "N/A"
       } <br />
       <b>Publisher: </b>${data.volumeInfo.publisher || "No publisher"} <br />
-      <b>Book:</b> ${data.volumeInfo.pageCount || "No page count"} <br />
+      
+      <b>Book:</b> ${data.volumeInfo.pageCount ? data.volumeInfo.pageCount + " pages" : "No page count"} <br />
     `;
 
   bookContent.appendChild(titleContainer);

@@ -4,10 +4,10 @@ export default function Loading(loading) {
     const mainEl = document.querySelector("main");
     if (loading){
         loaderEl.style.display = "block";
-        searchEl.style.display = "none";
+        // searchEl.style.display = "none";
     }else {
         loaderEl.style.display = "none";
-        searchEl.style.display = "block";
+        // searchEl.style.display = "block";
     }
     
 }

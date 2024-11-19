@@ -39,7 +39,9 @@ main {
   min-height: 100vh;
 }
 .search-result h2 {
-  margin: 2rem;
+  
+  margin-bottom: 2rem;
+  margin-top: 5rem;
 }
 #matched-book {
   background-color: var(--text);
@@ -50,6 +52,7 @@ main {
   color: var(--text);
   padding-bottom: 1rem;
 }
+
 #matched-book,
 #related-book {
   /* min-height: 30%; */

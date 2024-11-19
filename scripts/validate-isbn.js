@@ -2,6 +2,7 @@
 import displayBook from "./display-book.js";
 import showSearch from "./showSearch.js";
 import Loading from "./component/Loading.js";
+import Announce from "./component/Announce.js";
 
 //variables
 const input = document.querySelector("#input");
@@ -146,7 +147,14 @@ async function fetchBook(url) {
     .then((response) => response.json())
     .then(async (data) => {
       if (!data.items) {
-        relatedEl.innerHTML = "no books found";
+        // relatedEl.innerHTML = "no books found";
+        // matchedEl.innerHTML = "no books found";
+        const searchEl = document.getElementById("search-result");
+        searchEl.style.display = "none";
+        
+        Announce("no books found but the inputted isbn is valid");
+        Loading(false)
+        openDetailEl()
         return console.error("no data");
       }
       showSearch(false)

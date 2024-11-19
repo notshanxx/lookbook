@@ -31,8 +31,12 @@ header{
     gap: 1rem;
 }
 summary::marker{
-    color: var(--accent);
+    color: var(--background);
 
+}
+mark{
+  padding: .5rem 1rem;
+  background-color: var(--secondary);
 }
 
 details[open]{
