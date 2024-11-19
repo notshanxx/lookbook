@@ -1,29 +1,35 @@
 #favorite-books{
-    padding: 3rem 1rem;
+    padding: 1rem 2rem;
     /* background-color: var(--secondary); */
-
 }
 .search-result h2{
     text-align: center;
 }
 
 #favorite-books {
-    min-height: 40%;
-    width: 100%;
+    /* width: 100%; */
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-auto-rows: 1fr;
-    gap: 1rem;
+    gap: .5rem;
+
+}
+#favorite-books h3{
+    color: var(--text);
+}
+#favorite-books .book{
+    background-color: var(--background);
+    
 }
 
 @media (min-width: 768px) {
     #favorite-books {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(6, minmax(0, 1fr));
     }
 }
 @media (min-width: 1024px) {
     #favorite-books {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-columns: repeat(8, minmax(0, 1fr));
     }
     
 }

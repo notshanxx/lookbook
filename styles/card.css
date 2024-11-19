@@ -127,8 +127,9 @@ button span {
     min-width: 30%;
     align-self: flex-start;
     font-size: 0.8rem;
-    margin: 0 2rem;
+    margin: 2rem;
     border-radius: 1rem;
+    
   }
   .search-result {
     min-width: 50%;

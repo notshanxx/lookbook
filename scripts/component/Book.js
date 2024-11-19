@@ -3,6 +3,15 @@ import displayBookInfo from "../display-book-info.js";
 export default function Book(book) {
   // will take care of book cover displayed initially
 
+  function removeMargin(){
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+    const matchedBook = document.getElementById("matched-book");
+    const relatedBook = document.getElementById("related-book");
+    matchedBook.style.margin = "0 1rem";
+    relatedBook.style.margin = "0 1rem";
+}
+  }
+
   let formatData = {
     authors: book.volumeInfo.authors
       ? book.volumeInfo.authors.join(", ")
@@ -226,7 +235,10 @@ export default function Book(book) {
     book.volumeInfo.subtitle ? `(${book.volumeInfo.subtitle})` : ""
   }`;
 
-  h3.addEventListener("click", () => displayBookInfo(JSON.stringify(book)));
+  h3.addEventListener("click", () => {
+    displayBookInfo(JSON.stringify(book));
+    removeMargin();
+  });
   otherInfo.appendChild(h3);
  // add authors
   const authors = document.createElement("i");

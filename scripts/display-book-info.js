@@ -142,5 +142,13 @@ export default function displayBookInfo(passedData) {
   function closeBookInfo() {
     document.getElementById("book-info").innerHTML = "";
     document.getElementById("book-info").style.display = "none";
+    // return margin
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      const matchedBook = document.getElementById("matched-book");
+      const relatedBook = document.getElementById("related-book");
+      matchedBook.style.margin = "0 25%";
+      relatedBook.style.margin = "0 25%";
+    }
+  
   }
 }

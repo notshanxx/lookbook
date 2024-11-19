@@ -3,6 +3,7 @@ header{
     flex-direction: column;
     justify-content: space-around;
     min-height: 20vh;
+    position: relative;
     /* animation: up 2s ease-in-out infinite; */
     
 
