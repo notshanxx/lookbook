@@ -1,0 +1,22 @@
+#google-books{
+    display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .5rem;
+  margin: 1rem;
+}
+#google-books .book{
+    width: 100%;
+}
+@media (min-width: 768px) {
+    #google-books{
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    #google-books{
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+    }
+    
+}

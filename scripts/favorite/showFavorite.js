@@ -9,12 +9,22 @@
 </div>; */
  
 import Book from "../component/Book.js";
+import showGoogleBooks from "../google-books/showGoogleBooks.js";
 export default function showFavorite() {
   const searchEl = document.getElementById("search-result");
   
   if (searchEl) {
     searchEl.innerHTML = "";
   }
+  // Check if theres google books in local storage
+  let googleBookList = JSON.parse(localStorage.getItem("googleBooks"));
+  console.log(googleBookList)
+  if (googleBookList) {
+    showGoogleBooks(googleBookList);
+  }
+
+  
+  
 
   let favoriteList = JSON.parse(localStorage.getItem("favorite")) || [];
 

@@ -55,6 +55,15 @@ details[open]{
     gap: 1rem;
 
 }
+#google-sign-in-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+}
+#google-sign-in-button button{
+  border-radius: 1rem;
+}
 
 
 @media (min-width: 1024px) {

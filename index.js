@@ -25,7 +25,6 @@ window.onload = function() {
 favoriteBtn.addEventListener('click', ()=>{
     console.log("clicked")
     showSearch(true);
-    
     toFavorites();
 })
 

@@ -58,7 +58,7 @@ main {
   /* min-height: 30%; */
   display: grid;
   place-items: center;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-auto-rows: 1fr;
   gap: 0.5rem;
   padding: 3rem 1rem;
@@ -118,7 +118,7 @@ main {
 @media (min-width: 768px) {
   #matched-book,
   #related-book {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     padding: 3rem;
     margin: 0 25%;
   }
@@ -126,7 +126,7 @@ main {
 @media (min-width: 1024px) {
   #matched-book,
   #related-book {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .book .image-container:hover {
     transform: scale(1.1) translateY(-1rem);

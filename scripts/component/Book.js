@@ -1,6 +1,6 @@
 import displayBookInfo from "../display-book-info.js";
 
-export default function Book(book) {
+export default function Book(book, disableFavoriteBtn) {
   // will take care of book cover displayed initially
 
   function removeMargin(){
@@ -236,7 +236,7 @@ export default function Book(book) {
   }`;
 
   h3.addEventListener("click", () => {
-    displayBookInfo(JSON.stringify(book));
+    displayBookInfo(JSON.stringify(book), disableFavoriteBtn);
     removeMargin();
   });
   otherInfo.appendChild(h3);

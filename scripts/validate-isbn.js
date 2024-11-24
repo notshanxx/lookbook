@@ -10,7 +10,6 @@ const button = document.getElementById("search-btn");
 const resultSpan = document.getElementById("result-span");
 const matchedEl = document.getElementById("matched-book");
 const relatedEl = document.querySelector("#related-book");
-// const apiKey = "AIzaSyB_GlUk4NE5CrL_b7mwEHYOZqo_Ed9jyzM";
 export let isbn = "";
 
 let url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`;
