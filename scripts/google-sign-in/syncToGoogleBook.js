@@ -1,6 +1,7 @@
-// import showFavorite from "../favorite/showFavorite";
+import handleResponse from "./handleResponse.js";
 // Local Storage to Google Books
 const syncToGoogleBtn = document.getElementById("sync-book-btn");
+
 
 syncToGoogleBtn.addEventListener("click", () => {
   const book = JSON.parse(localStorage.getItem("favorite")) || [];
@@ -55,7 +56,11 @@ function syncToGoogleBook(response) {
     .then(response => response.json())
     .then(data => {
       console.log(data);
+      // show google books
     })
     .catch(error => console.error('Error fetching user info:', error));
   });
+  
+  //refresh google books
+  handleResponse(response)
 }
