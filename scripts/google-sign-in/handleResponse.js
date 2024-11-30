@@ -19,14 +19,18 @@ export default function handleResponse(response) {
       // console.log(data);
       Announce("Connected to Google Books");
       //store user google books favorites and show the google books if theres any
+      
       if (data.items) {
         localStorage.setItem("googleBooks", JSON.stringify(data.items));
         Announce(`${data.items.length} Books in your Google Library`);
         connectBtn.textContent = "Refresh Google Books";
-        showGoogleBooks(data.items);
       } else {
+        localStorage.setItem("googleBooks", JSON.stringify([]));
         Announce("No Books in your Google Library");
       }
+      showGoogleBooks(data.items);
+
+      
     })
     .catch((error) => {
       console.error("Error fetching user info:", error);
