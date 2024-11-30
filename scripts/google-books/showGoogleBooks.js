@@ -9,13 +9,14 @@ export default function showGoogleBooks(book) {
   if (oldGoogleBooks) {
     searchEl.removeChild(oldGoogleBooks);
   }
-  const oldGoogleBookHeading = document.querySelector("#search-result h2");
+  const oldGoogleBookHeading = document.querySelector("#google-book-heading");
   if (oldGoogleBookHeading) {
     searchEl.removeChild(oldGoogleBookHeading);
   }
 
-  if (book.length === 0) {
+  if (!book || book.length === 0) {
     const noFavorite = document.createElement("h2");
+    noFavorite.id = "google-book-heading";
     noFavorite.textContent = "NO BOOKS IN YOUR GOOGLE LIBRARY";
     searchEl.appendChild(noFavorite);
     return;
@@ -25,6 +26,7 @@ export default function showGoogleBooks(book) {
   const googleBooks = document.createElement("div");
   googleBooks.id = "google-books";
   const googleBookHeading = document.createElement("h2");
+  googleBookHeading.id = "google-book-heading";
   googleBookHeading.textContent = "Google Books";
 
   searchEl.insertBefore(googleBooks, searchEl.firstChild);
