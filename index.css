@@ -71,6 +71,13 @@ img {
   height: auto;
 }
 
+.image-container img:first-child {
+  /*Make book image same width and height*/
+  float: left;
+  width: 7rem;
+  height: 10rem;
+  background-size: cover;
+}
 
 /* @media (min-width: 1024px) {
   .book img:first-child {
