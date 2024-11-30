@@ -74,16 +74,8 @@ img {
 .image-container img:first-child {
   /*Make book image same width and height*/
   float: left;
-  width: 7rem;
+  width: 100%;
   height: 10rem;
   background-size: cover;
 }
 
-/* @media (min-width: 1024px) {
-  .book img:first-child {
-    float: left;
-  width:  100%;
-  height: 150px;
-  object-fit: cover;
-  }
-} */
