@@ -1,5 +1,6 @@
-// import displayBookInfo from "./display-book-info.js";
+
 // export that display search result per book
+//called in dispplay book
 
 import showSearch from "./showSearch.js";
 import Book from "./component/Book.js";

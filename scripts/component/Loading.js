@@ -1,3 +1,4 @@
+// SHOW LOADING ANIMATION
 export default function Loading(loading) {
     const loaderEl = document.getElementById("loader")
     const searchEl = document.getElementById("search-result");

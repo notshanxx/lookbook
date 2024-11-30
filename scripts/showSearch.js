@@ -1,3 +1,4 @@
+// show the searches
 export default function showSearch(show) {
   const searchEl = document.getElementById("search-result");
   const matchedEl = document.getElementById("matched-book");

@@ -57,6 +57,7 @@ export default function displayBook(response) {
       searchedBookIndiv(book, false);
     }
   });
+  // if no book found
   if (!matchedEl.innerText) {
     if (window.innerWidth > 768) {
       matchedEl.innerHTML = '<div></div><div></div><div style="display: flex; justify-content: center; align-items: center; height: 100%;">No matches found</div>';

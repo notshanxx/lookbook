@@ -1,3 +1,5 @@
+// ANNOUNCE
+// pass the text to be announced and append it to the announcer div
 export default function Announce(text) {
     const announceDiv = document.getElementById("announcer");
     const p = document.createElement("p");

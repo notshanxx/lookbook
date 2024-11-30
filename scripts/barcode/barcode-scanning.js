@@ -32,8 +32,10 @@ export default function initializeBarcodeScanner() {
     const input = document.querySelector("input");
     input.value = barcode;
     // document.querySelector("#barcode-scanner").style.display = "none";
+    // Make the Scanner hidden
     showScanner(false);
     Quagga.stop();
+    // automatically click the search button
     const button = document.getElementById("search-btn");
     button.click();
 

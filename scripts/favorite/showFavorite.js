@@ -1,5 +1,5 @@
-// THIS CHANGES THE PAGE TO THE FAVORITE PAGE ONCE THE FAVORITE BUTTON IS CLICKED
-// this html content will be removed
+// THIS CHANGES THE PAGE TO THE FAVORITE PAGE ONCE THE FAVORITE BUTTON IS CLICKED (use also for refreshing)
+// this html content will be removed and changed
 
 /* <div class="search-result" id="search-result">
   <h2>MATCHED ISBN</h2>
@@ -12,10 +12,11 @@ import Book from "../component/Book.js";
 import showGoogleBooks from "../google-books/showGoogleBooks.js";
 export default function showFavorite() {
   const searchEl = document.getElementById("search-result");
-  
+  // remove cleart the div 
   if (searchEl) {
     searchEl.innerHTML = "";
   }
+
   // Check if theres google books in local storage
   let googleBookList = JSON.parse(localStorage.getItem("googleBooks"));
   console.log(googleBookList)
@@ -24,7 +25,8 @@ export default function showFavorite() {
   }
 
   
-  
+  // Creates the book lists and headings
+
 
   let favoriteList = JSON.parse(localStorage.getItem("favorite")) || [];
 
@@ -42,14 +44,11 @@ export default function showFavorite() {
     searchEl.appendChild(favoriteHeading);
     searchEl.appendChild(favoriteBooks);
 
+
   favoriteList.forEach(data => {
-
+    //get the book structure in BOOK.js by passing the data 
     const BOOK = Book(data);
-
-    
-    
-
-    
+    // add in the html
     favoriteBooks.appendChild(BOOK);
 
   });

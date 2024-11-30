@@ -74,9 +74,12 @@ main {
   font-size: 0.8rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   max-width: 100%;
   margin: 0 1rem;
+}
+.info-container > * {
+  min-height: 2rem;
 }
 .info-container h3 {
   color: var(--background);
