@@ -14,8 +14,10 @@ export default function removeToFavorite(book) {
     console.log("removed from favorite", favoriteList);
     
     // check if in favorite page
-    const favoriteHeading = document.querySelector("#search-result h2");
-    if (favoriteHeading && favoriteHeading.textContent === "Favorites") {
+    const favoriteHeadings = document.querySelectorAll("#search-result h2");
+    favoriteHeadings.forEach((heading) => {
+      if (heading.textContent === "Favorites") {
         showFavorite();
-    }
+      }
+    });
 }
