@@ -3,6 +3,7 @@ import displayBook from "./display-book.js";
 import showSearch from "./showSearch.js";
 import Loading from "./component/Loading.js";
 import Announce from "./component/Announce.js";
+import searchHistory from "./setting/searchHistory.js";
 
 //variables
 const input = document.querySelector("#input");
@@ -45,8 +46,13 @@ button.addEventListener("click", () => {
     ? (url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${inputISBN}`)
     : openDetailEl();
 
-  //fetching if theres this isbn in databse
-  checkISBN(inputISBN) ? fetchBook(url) : "";
+  //fetching if theres this isbn in databse and add to history
+  if (checkISBN(inputISBN)) {
+    fetchBook(url)
+     searchHistory(dashedISBN)
+  }
+
+
 });
 
 // source ko https://www.instructables.com/How-to-verify-a-ISBN/

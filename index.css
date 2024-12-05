@@ -1,16 +1,16 @@
 :root[data-theme="light"] {
-  --text: #233736;
-  --background: #f1f2ec;
-  --primary: #4fc986;
-  --secondary: #78938a;
-  --accent: #7e6c53;
+  --text: #333;
+  --background: #fdfdfd;
+  --primary: #2ecc71;
+  --secondary: #e9e9e9;
+  --accent: #9b59b6;
 }
 :root[data-theme="dark"] {
-  --text: #f5faf7;
-  --background: #030805;
-  --primary: #36b06d;
-  --secondary: #1a6b3d;
-  --accent: #1c9c55;
+  --text: #dfddc1;
+  --background: #233736;
+  --primary: #226f54;
+  --secondary: #87c38f;
+  --accent: #da2c38;
 }
 
 * {
@@ -57,12 +57,14 @@ nav {
 }
 button {
   background-color: var(--accent);
+  color: var(--text);
   border: none;
   padding: 0.5rem 1rem;
 }
 
 input {
   background-color: var(--background);
+  color: var(--text);
   border: none;
   padding: 0.5rem 1rem;
 }

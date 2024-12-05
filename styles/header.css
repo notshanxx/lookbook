@@ -4,26 +4,31 @@ header{
     justify-content: space-around;
     min-height: 20vh;
     position: relative;
-    /* animation: up 2s ease-in-out infinite; */
-    
 
 }
+
 .search-header{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    text-align: center;
     gap: 1rem;
     margin: 1rem;
-    background-color: var(--text);
+    background-color: var(--primary);
     padding: 2rem;
     border-radius: 1rem;
-    color: var(--background);
+    color: var(--text);
 }
 .search-header h1{
-  color: var(--background);
+  color: var(--text);
+}
+.search-header a{
+  color: var(--text);
+  font-weight: bold;
 }
 .isbn-formula {
+  
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -31,7 +36,7 @@ header{
     gap: 1rem;
 }
 summary::marker{
-    color: var(--background);
+    color: rgb(206, 255, 109);
 
 }
 mark{
@@ -39,7 +44,7 @@ mark{
 }
 
 details[open]{
-    background-color: rgba(255, 255, 255, 0.301);
+    background-color: var(--background);
     padding: 1rem;
     border-radius: .5rem;
 }
@@ -63,6 +68,10 @@ details[open]{
 }
 #google-sign-in-button button{
   border-radius: 1rem;
+}
+.google-btn{
+  background-color: var(--background);
+  color: var(--text);
 }
 
 

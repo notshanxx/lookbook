@@ -57,3 +57,5 @@ stopScannerButton.addEventListener(('click'), ()=>{
     showScanner(false)
 
 })
+
+

@@ -11,7 +11,8 @@
 }
 
 .announcer p{
-    background-color: aliceblue;
+    background-color: var(--text);
+    color: var(--background);
     padding: .5rem;
     animation: fadeInUp 5s cubic-bezier(0, 1, 0.58, 1) forwards;
 }

@@ -44,7 +44,7 @@ main {
   margin-top: 5rem;
 }
 #matched-book {
-  background-color: var(--text);
+  background-color: var(--primary);
   border-radius: 1rem;
 }
 #matched-book h2 {
@@ -82,7 +82,7 @@ main {
   min-height: 2rem;
 }
 .info-container h3 {
-  color: var(--background);
+  color: var(--primary);
   font-size: 1rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -95,6 +95,7 @@ main {
 }
 /* author */
 .info-container i {
+  color: var(--text);
   margin: 0.5rem 0;
   font-size: 0.8rem;
   display: -webkit-box;
