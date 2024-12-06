@@ -36,7 +36,7 @@ homeBtn.addEventListener('click', ()=>{
     showSearch(false);
 })
 
-
+// scanner
 scannerBtn.addEventListener('click', ()=>{
     // const display = barcodeEl.style.display;
     
