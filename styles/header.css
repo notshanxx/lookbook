@@ -21,7 +21,7 @@ header{
     color: var(--text);
 }
 .search-header h1{
-  color: var(--text);
+  color: var(--background);
 }
 .search-header a{
   color: var(--text);
@@ -68,6 +68,7 @@ details[open]{
 }
 #google-sign-in-button button{
   border-radius: 1rem;
+  font-weight: 500;
 }
 .google-btn{
   background-color: var(--background);
