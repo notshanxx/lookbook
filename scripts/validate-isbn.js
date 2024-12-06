@@ -156,9 +156,18 @@ async function fetchBook(url) {
         const searchEl = document.getElementById("search-result");
         searchEl.style.display = "none";
 
+      if (data.error) {
+        console.error(data.error);
+        Announce(data.error.message);
+        Loading(false);
+        openDetailEl();
+        return;
+      }
+
         Announce("no books found but the inputted isbn is valid");
         Loading(false);
         openDetailEl();
+        console.log(data)
         return console.error("no data");
       }
       showSearch(false);
@@ -176,8 +185,13 @@ async function fetchBook(url) {
       Loading(false);
     })
     .catch((error) => {
+      if (!navigator.onLine) {
+        Announce("No internet connection. TRY AGAIN WITH INTERNET :D");
+        return;
+      }
       Announce("Error fetching books. TRY AGAIN :D");
       console.error("Error:", error);
+
     });
 }
 
