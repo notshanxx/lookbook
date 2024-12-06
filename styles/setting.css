@@ -6,14 +6,13 @@
   height: 100vh;
   backdrop-filter: blur(300px);
   z-index: 0;
-
   transform: translateX(50px);
   opacity: 0;
   display: block;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.setting button{
+.setting button {
   border-radius: 1rem;
   background-color: var(--background);
   color: var(--text);
@@ -23,7 +22,7 @@
   z-index: 999;
   transform: translateX(0);
   opacity: 1;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 #close-setting {
@@ -52,13 +51,18 @@
 }
 
 .search-history {
+  display: flex;
+  flex-direction: column-reverse;
   max-height: 50vh;
   padding: 1rem;
   overflow: auto;
 }
+li{
+  list-style: " > ";
+}
 
 input[type="checkbox"] {
-    caret-color: transparent;
+  caret-color: transparent;
   position: relative;
   width: 2rem;
   height: 1rem;
