@@ -36,7 +36,7 @@ header{
     gap: 1rem;
 }
 summary::marker{
-    color: rgb(206, 255, 109);
+    color: var(--background);
 
 }
 mark{
