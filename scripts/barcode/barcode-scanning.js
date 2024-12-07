@@ -36,8 +36,8 @@ export default function initializeBarcodeScanner() {
     showScanner(false);
     Quagga.stop();
     // automatically click the search button
-    const button = document.getElementById("search-btn");
-    button.click();
+    // const button = document.getElementById("search-btn");
+    // button.click();
 
   });
 }
