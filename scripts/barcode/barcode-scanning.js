@@ -29,7 +29,7 @@ export default function initializeBarcodeScanner() {
   Quagga.onDetected(function (result) {
     const barcode = result.codeResult.code;
     console.log("Detected barcode:", barcode);
-    const input = document.querySelector("input");
+    const input = document.getElementById("input");
     input.value = barcode;
     // document.querySelector("#barcode-scanner").style.display = "none";
     // Make the Scanner hidden
